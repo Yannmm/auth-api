@@ -3,8 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  get 'up' => 'rails/health#show', as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  get '/member_details' => 'members#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :companies
+    end
+  end
 end

@@ -3,19 +3,17 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
-  # Think I need to read responders gem to understand all these.
-
   private
 
-  # def respond_with(resource, options = {})
-  #   if resource.persisted?
-  #     render json: {
-  #       status: { code: 200, message: 'Signed up successfully.', data: resource }
-  #     }, status: :ok
-  #   else
-  #     render json: {
-  #       status: { message: 'User could not be created.', errors: resource.errors.full_messages }, status: 422
-  #     }
-  #   end
-  # end
+  def respond_with(resource, options = {})
+    if resource.persisted?
+      render json: {
+        status: { code: 200, message: 'Signed up successfully.', data: resource }
+      }, status: :ok
+    else
+      render json: {
+        status: { message: 'User could not be created.', errors: resource.errors.full_messages }, status: 422
+      }
+    end
+  end
 end
