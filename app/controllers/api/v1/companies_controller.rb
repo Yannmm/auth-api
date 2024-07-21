@@ -5,10 +5,13 @@ module Api
     class CompaniesController < ApiController
       before_action :set_company, only: %i[show update destroy]
 
+      load_and_authorize_resource
+
       respond_to :json
 
       def index
         @companies = current_user.companies
+        # @companies = Company.all
         render json: @companies, status: :ok
       end
 

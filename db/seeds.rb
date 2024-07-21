@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+c1 = Company.new(name: 'Company1', established_year: '1990', address: '1st HD Rd, Bd 100, CD City', user_id: 1)
+c1.save!
+c2 = Company.new(name: 'Company2', established_year: '1990', address: '1st HD Rd, Bd 100, CD City', user_id: 1)
+c2.save!
+c3 = Company.new(name: 'Company3', established_year: '1990', address: '1st HD Rd, Bd 100, CD City', user_id: 2)
+c3.save!
+c4 = Company.new(name: 'Company4', established_year: '1990', address: '1st HD Rd, Bd 100, CD City', user_id: 3)
+c4.save!
