@@ -9,6 +9,7 @@ module Api
 
       def index
         @companies = current_user.companies
+        render json: @companies, status: :ok
       end
 
       def create

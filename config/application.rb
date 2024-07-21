@@ -27,11 +27,11 @@ module AuthApi
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    # config.api_only = true
 
     # @see https://github.com/waiting-for-dev/devise-jwt/issues/235
-    config.session_store :cookie_store, key: '_interslice_session'
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use config.session_store, config.session_options
+    # config.session_store :cookie_store, key: '_interslice_session'
+    # config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use config.session_store, config.session_options
   end
 end
