@@ -45,9 +45,11 @@ group :development do
   # gem "spring"
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+
+  gem 'rubocop', require: false
 end
 
 gem 'devise'
 gem 'devise-jwt'
 
-gem 'rubocop', require: false
+

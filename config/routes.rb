@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       resources :companies
     end
   end
+
+  get 'cookies/create', as: 'set_cookie'
+  get 'cookies/show', as: 'get_cookie'
 end

@@ -10,9 +10,17 @@ class User < ApplicationRecord
          :jwt_authenticatable,
          jwt_revocation_strategy: self
 
-  self.skip_session_storage = [:http_auth, :params_auth]
+  self.skip_session_storage = [:params_auth, :token_auth]
 
   has_many :companies
+
+  ROLES = %W[super_admin admin manager]
+
+  ROLES.each do |role|
+    define_method "#{role}?" do
+      self.role == role
+    end
+  end
 
   def jwt_payload
     super
