@@ -16,7 +16,8 @@ module Api
       end
 
       def create
-        @company = current_user.companies.new(company_params)
+        @company = Company.new(company_params)
+        debugger
         if @company.save
           render json: @company, status: :created
         else
@@ -56,13 +57,13 @@ module Api
 
       # TODO: ?
       def set_company
-        @company = current_user.companies.find(params[:id])
+        @company = Company.find(params[:id])
       rescue ActiveRecord::RecordNotFound => e
         render json: e.message, status: :not_found
       end
 
       def company_params
-        params.require(:company).permit(:name, :established_year, :address)
+        params.require(:company).permit(:name, :established_year, :address, :user_id)
       end
     end
   end

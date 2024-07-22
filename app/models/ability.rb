@@ -10,7 +10,7 @@ class Ability
     #   can :read, :all
 
     if user.super_admin?
-      can :manager, Company, :all
+      can :manage, Company, :all
     elsif user.admin?
       can :read, Company, :all
     end
