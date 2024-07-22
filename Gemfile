@@ -46,7 +46,7 @@ group :development do
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 
-  gem 'rubocop', require: false
+
 end
 
 gem 'devise'
@@ -55,3 +55,5 @@ gem 'devise-jwt'
 gem 'cancancan'
 
 
+gem "ruby-lsp"
+gem "rubocop"
