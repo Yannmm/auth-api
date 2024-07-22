@@ -12,7 +12,8 @@ class Ability
     if user.super_admin?
       can :manage, Company, :all
     elsif user.admin?
-      can :read, Company, :all
+      can :read, Company, user_id: user.id
+      can :update, Company, user_id: user.id
     end
   end
 end

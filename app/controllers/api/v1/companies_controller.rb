@@ -10,8 +10,8 @@ module Api
       respond_to :json
 
       def index
-        @companies = current_user.companies
-        # @companies = Company.all
+        # @companies = current_user.companies
+        @companies = Company.accessible_by(current_ability)
         render json: @companies, status: :ok
       end
 
